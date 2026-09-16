@@ -1,19 +1,19 @@
 # Password Manager
 
 Desktop password manager built in Python. I started it as a cybersecurity
-portfolio project, but ended up actually using it for my own accounts — no
+portfolio project, but ended up actually using it for my own accounts no
 more excuses for reusing passwords across sites.
 
 Everything is encrypted and stays local on your machine, nothing gets
 uploaded anywhere (except when checking if a password has already been
-leaked, and even then you don't send the full password — more on that
+leaked, and even then you don't send the full password more on that
 below).
 
 ## What it does
 
 - Stores username/password/notes for each account, all encrypted with
   AES-256-GCM
-- The master password is never stored anywhere — it only lives in RAM
+- The master password is never stored anywhere it only lives in RAM
   while the app is open
 - Auto-locks after a few minutes of inactivity
 - Generates truly random passwords (using `secrets`, not `random`)
@@ -43,7 +43,7 @@ thousands of hashes that share that same prefix, and I compare the rest
 locally. That way the server never learns exactly which password I'm
 checking.
 
-All of this lives in a local SQLite file — no server, no cloud, no sync
+All of this lives in a local SQLite file, no server, no cloud, no sync
 between devices (for now).
 
 ## Installation
@@ -58,7 +58,7 @@ python main.py
 ```
 
 The first time you run it, it'll ask you to create your master password.
-Heads up: there's no way to recover it if you forget it — that's
+Heads up: there's no way to recover it if you forget it, that's
 intentional (that's how zero-knowledge works).
 
 ## Building the .exe
@@ -90,10 +90,10 @@ password_manager/
 ## Known limitations (being honest)
 
 - Python doesn't 100% guarantee wiping the key from RAM due to garbage
-  collection — for something more serious you'd need to get into locked
+  collection, for something more serious you'd need to get into locked
   memory (`mlock`) or a different language with manual memory control
 - It doesn't protect you if someone has root/admin access on your machine
-  while the app is unlocked — no software password manager does, that's
+  while the app is unlocked, no software password manager does, that's
   what HSMs are for
 - It doesn't sync between devices, it's 100% local on purpose
 
@@ -109,5 +109,5 @@ More detail on this, and on what other threats I considered, is in
 
 ---
 
-Made by [Leonardo Hinojosa](https://github.com/LeonardoH369) — Software
+Made by [Leonardo Hinojosa](https://github.com/LeonardoH369) Software
 Development Engineering student, focused on networking and cybersecurity.
